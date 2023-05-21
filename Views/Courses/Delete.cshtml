@@ -1,0 +1,63 @@
+﻿@model LanguageSchool.Data.Course
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Изтриване</h1>
+
+<h3>Сигурни ли сте, че искате да изтриете това?</h3>
+<div>
+    <h4>Курсове</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+           @* @Html.DisplayNameFor(model => model.Name)*@
+            Име
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+         @*   @Html.DisplayNameFor(model => model.Language)*@
+            Език
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Language)
+        </dd>
+        <dt class = "col-sm-2">
+           @* @Html.DisplayNameFor(model => model.AgeTypes)*@
+            Възрастова група
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AgeTypes.Id)
+        </dd>
+        <dt class = "col-sm-2">
+           @* @Html.DisplayNameFor(model => model.Categories)*@
+            Категория
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Categories.Id)
+        </dd>
+        <dt class = "col-sm-2">
+           @* @Html.DisplayNameFor(model => model.Description)*@
+            Описание
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.RegData)*@
+            Дата на регистрация
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RegData)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Изтриване" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад</a>
+    </form>
+</div>

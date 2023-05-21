@@ -1,0 +1,82 @@
+﻿@using LanguageSchool.Data;
+@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<LanguageSchool.Data.SchoolYear>
+@inject UserManager<Student> userManager;
+@inject SignInManager<Student> signInManager;
+@{
+    ViewData["Title"] = "Учебна година";
+}
+<div class="background">
+<h1>Учебна година</h1>
+
+<p>
+     @if (User.IsInRole("Admin"))
+                {
+                        <a asp-action="Create" class="material-symbols-outlined">library_add</a>
+                }
+</p>
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-3">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Courses.ImageUrl)" width="100" />
+            <div class="card-body">
+
+
+                @*@Html.DisplayNameFor(model => model.SchoolYears) :*@
+                Учебна година :
+                @Html.DisplayFor(modelItem => item.SchoolYears)
+                <br>
+               @* @Html.DisplayNameFor(model => model.DateBegin) :*@
+               Начало :
+                @Html.DisplayFor(modelItem => item.DateBegin)
+                <br>
+                @*@Html.DisplayNameFor(model => model.DateEnd) :*@
+                Край :
+                @Html.DisplayFor(modelItem => item.DateEnd)
+                <br>
+               @* @Html.DisplayNameFor(model => model.Duration) :*@
+                    Продължителност :
+                @Html.DisplayFor(modelItem => item.Duration)
+                <br>
+                @*@Html.DisplayNameFor(model => model.Methods)*@
+                    Режим на обучение :
+                @Html.DisplayFor(modelItem => item.Methods.Name)
+                <br>
+               @* @Html.DisplayNameFor(model => model.Price)*@
+                    Цена на курс :
+                @Html.DisplayFor(modelItem => item.Price)
+                <br>
+                @*@Html.DisplayNameFor(model => model.Description)*@
+                    Описание :
+                @Html.DisplayFor(modelItem => item.Description)
+                <br>
+               @* @Html.DisplayNameFor(model => model.BookPrice)*@
+                    Цена на учебници :
+                @Html.DisplayFor(modelItem => item.BookPrice)
+                <br>
+               @* @Html.DisplayNameFor(model => model.RegData)*@
+                    Дата на регистрация :
+                @Html.DisplayFor(modelItem => item.RegData)
+
+                <br>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="material-symbols-outlined">Edit</a>
+
+                    <a asp-action="Details" asp-route-id="@item.Id" class="material-symbols-outlined">Info</a>
+
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="material-symbols-outlined">Delete</a>
+                }
+                <a asp-controller="Enrollments" asp-action="Create" asp-route-id="@item.Id" class="material-symbols-outlined" style="text-decoration:none">person_addПРИСЪЕДИНИ СЕ</a>
+
+            </div>
+        </div>
+        </div>
+
+    }
+
+</div>
+</div>

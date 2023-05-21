@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LanguageSchool.Data.AgeType>
+
+@{
+    ViewData["Title"] = "Възрастова група";
+}
+<div class="background">
+<h1>Възрастова група</h1>
+
+<p>
+    <a asp-action="Create" class="material-symbols-outlined">library_add</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Name)*@
+                Име
+            </th>
+            <th>
+               @* @Html.DisplayNameFor(model => model.RegData)*@
+               Дата на регистрация
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegData)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="material-symbols-outlined">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.Id"class="material-symbols-outlined">Info</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="material-symbols-outlined">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

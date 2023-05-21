@@ -1,0 +1,32 @@
+﻿@model LanguageSchool.Data.Method
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Детайли</h1>
+
+<div>
+    <h4>Режим на обучение</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+           @* @Html.DisplayNameFor(model => model.Name)*@
+           Име
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+           @* @Html.DisplayNameFor(model => model.RegData)*@
+           Дата на регистрация
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RegData)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Редактирай</a> |
+    <a asp-action="Index">Назадt</a>
+</div>

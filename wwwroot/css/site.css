@@ -1,0 +1,38 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.image img {
+    float: left;
+}
+
+.text {
+    font-size: 20px;
+    padding: 20%;
+   
+}
+.image2 img {
+    float: left;
+    height: 350px;
+}
+.text2, h1{
+    font-family:Garamond
+}
+.text, h1 {
+    font-family: Garamond
+}
+body {
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 76%, rgba(199,246,251,1) 100%);
+}

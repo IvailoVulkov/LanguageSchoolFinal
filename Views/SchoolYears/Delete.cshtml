@@ -1,0 +1,92 @@
+﻿@model LanguageSchool.Data.SchoolYear
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Изтриване</h1>
+
+<h3>Сигурни ли сте, че искате да изтриете това?</h3>
+<div>
+    <h4>Учебна година</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+           @* @Html.DisplayNameFor(model => model.Courses)*@
+           Курс
+        </dt>
+        <dd class = "col-sm-10">
+           @* @Html.DisplayFor(model => model.Courses.Id)*@
+           Номер на курс
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.SchoolYears)*@
+            Учебна година
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SchoolYears)
+        </dd>
+        <dt class = "col-sm-2">
+           @* @Html.DisplayNameFor(model => model.DateBegin)*@
+           Начало
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateBegin)
+        </dd>
+        <dt class = "col-sm-2">
+           @* @Html.DisplayNameFor(model => model.DateEnd)*@
+           Край
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateEnd)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Duration)*@
+            Продължителност
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Methods)*@
+            Режим на обучение
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Methods.Id)
+        </dd>
+        <dt class = "col-sm-2">
+          @*  @Html.DisplayNameFor(model => model.Price)*@
+          Цена
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+           @* @Html.DisplayNameFor(model => model.Description)*@
+           Описание
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.BookPrice)*@
+            Цена на учебниците
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BookPrice)
+        </dd>
+        <dt class = "col-sm-2">
+           @* @Html.DisplayNameFor(model => model.RegData)*@
+           Дата на регистрация
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RegData)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Изтриване" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад</a>
+    </form>
+</div>
